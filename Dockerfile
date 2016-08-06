@@ -1,9 +1,9 @@
 # Apline+PostgreSQL
 
-FROM alpine:latest
+FROM alpine:3.4
 MAINTAINER David Jia Wei Li david@david-li.com
 RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    apk update && apk add curl "postgresql@edge>9.4" && \
+    apk update && apk add curl "postgresql@stable>9.4" && \
     mkdir /docker-entrypoint-initdb.d && \
     curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.2/gosu-amd64" && \
     chmod +x /usr/local/bin/gosu && \
